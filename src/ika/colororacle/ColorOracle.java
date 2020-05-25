@@ -147,7 +147,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             }
         } catch (Exception ex) {
             ColorOracle.showErrorMessage("Access to the system tray or "
-                    + "notification area \nis not supported on your system.",
+                            + "notification area \nis not supported on your system.",
                     true);
             Logger.getLogger(ColorOracle.class.getName()).log(Level.SEVERE, null, ex);
             System.exit(-1);
@@ -189,7 +189,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
      * Constructor of Color Oracle. Initializes the tray icon and its menu.
      */
     private ColorOracle() throws Exception {
-        initTrayIcon();
+        new UserInterface();
     }
 
     /**
@@ -242,6 +242,45 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
         }
         Screen.getScreens().clear();
 
+    }
+
+    public class UserInterface extends JFrame {
+        public UserInterface() {
+            JFrame mainFrame = new JFrame();
+            mainFrame.setLocation(500, 500);
+            mainFrame.setVisible(true);
+            mainFrame.setSize(800, 400);
+            JPanel bottomLeftPanel = new JPanel();
+            JPanel bottomRightPanel = new JPanel();
+            mainFrame.setResizable(false);
+            mainFrame.add(bottomLeftPanel, BorderLayout.WEST);
+            mainFrame.add(bottomRightPanel, BorderLayout.EAST);
+
+
+            JButton normalButton = new JButton("Normal Vision");
+            JButton deuteranopiaButton = new JButton("Deuteranopia (Common)");
+            JButton protanopiaButton = new JButton("Protanopia (Rare)");
+            JButton tritanopiaButton = new JButton("Tritanopia (Very Rare)");
+            JButton grayscaleButton = new JButton("Grayscale");
+            JButton aboutButton = new JButton("About Us");
+
+            bottomLeftPanel.add(normalButton);
+            bottomLeftPanel.add(deuteranopiaButton);
+            bottomLeftPanel.add(protanopiaButton);
+            bottomLeftPanel.add(tritanopiaButton);
+            bottomLeftPanel.add(grayscaleButton);
+            bottomLeftPanel.add(aboutButton);
+
+
+            bottomLeftPanel.setLayout(new GridLayout(6, 1, 0, 5));
+            bottomLeftPanel.setSize(75, 15);
+
+
+        }
+
+//    public static void main(String[] args) {
+//        new UserInterface();
+//    }
     }
 
     /**
