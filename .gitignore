@@ -8,3 +8,4 @@ dist
 win/launch4j
 win/ColorOracle.exe
 win/ColorOracle.zip
+/bin/
