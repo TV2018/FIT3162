@@ -249,9 +249,6 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
 
     }
 
-//    public class AboutUs extends JDialog {
-//
-//    }
 
     public class UserInterface extends JFrame implements ActionListener {
 
@@ -299,7 +296,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             setAction();
             imageLabel = new JLabel();
             imageLabel.setLayout(null);
-            imageLabel.setBounds(0, 0, 580, 340);
+            imageLabel.setBounds(0, 0, 500, 380);
             imageRightPanel.add(imageLabel, BorderLayout.CENTER);
             imageRightPanel.setSize(585, 305);
             setDemoImage(NORMALIMAGE);
