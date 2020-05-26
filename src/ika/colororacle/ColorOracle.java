@@ -244,7 +244,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
 
     }
 
-    public class UserInterface extends JFrame {
+    public class UserInterface extends JFrame implements ActionListener {
     	
     	 JButton normalButton ;
          JButton deuteranopiaButton;
@@ -300,17 +300,16 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
                 }
             });
 
-            //hi
-            //bye
-            //good
 
-//            return mainFrame;
 
         }
 
-//    public void main(String[] args) {
-//        new UserInterface();
-//    }
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+
+        }
+
     }
 
     /**
