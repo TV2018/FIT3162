@@ -263,6 +263,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             mainFrame.setResizable(false);
             mainFrame.add(bottomLeftPanel, BorderLayout.WEST);
             mainFrame.add(bottomRightPanel, BorderLayout.EAST);
+            mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   // End program when the main frame is closed
 
 
             deuteranopiaButton = new JButton("Deuteranopia (Common)");
