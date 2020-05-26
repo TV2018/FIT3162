@@ -43,6 +43,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
      * The name of the icon that is placed in the task bar.
      */
     private static final String MENUICON = "menuIcon.gif";
+    private static final String NORMALIMAGE = "hdr_normal.jpg";
 
     /**
      * The information panels for the different types of simulation.
@@ -288,6 +289,12 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
 
             setAction();
 
+            // get the image for the TrayIcon
+            ImageIcon normal = loadImageIcon(NORMALIMAGE, "");
+            JLabel imageLabel = new JLabel();
+            bottomRightPanel.add(imageLabel);
+            imageLabel.setIcon(normal);
+
         }
 
 
@@ -313,9 +320,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             } else if (e.getSource() == aboutButton){
                 aboutMenuItemActionPerformed(e);
             }
-
         }
-
     }
 
     /**
