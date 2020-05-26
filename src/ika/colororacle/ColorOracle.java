@@ -270,6 +270,8 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             mainFrame.setSize(800, 400);
             JPanel bottomLeftPanel = new JPanel();
             JPanel bottomRightPanel = new JPanel();
+            JPanel imageRightPanel = new JPanel();
+            JPanel buttonRightPanel = new JPanel();
             mainFrame.setResizable(false);
             mainFrame.add(bottomLeftPanel, BorderLayout.WEST);
             mainFrame.add(bottomRightPanel, BorderLayout.EAST);
@@ -292,17 +294,21 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             bottomLeftPanel.setLayout(new GridLayout(5, 1, 0, 5));
             bottomLeftPanel.setSize(75, 15);
 
+            bottomRightPanel.add(imageRightPanel);
+            bottomRightPanel.add(bottomRightPanel);
+
             setAction();
             imageLabel = new JLabel();
             imageLabel.setLayout(null);
             imageLabel.setBounds(0, 0, 580, 300);
-            bottomRightPanel.add(imageLabel, BorderLayout.CENTER);
+            imageRightPanel.add(imageLabel, BorderLayout.CENTER);
+            imageRightPanel.setSize(585, 305);
             setDemoImage(NORMALIMAGE);
 
             //add the apply button
             applyButton = new JButton("Apply");
-            bottomRightPanel.add(applyButton);
-            bottomRightPanel.setLayout(new GridLayout(2, 1, 0, 0));
+            bottomRightPanel.add(applyButton, BorderLayout.CENTER);
+
 
 
 
