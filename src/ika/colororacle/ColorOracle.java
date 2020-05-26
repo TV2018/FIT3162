@@ -269,6 +269,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             protanopiaButton = new JButton("Protanopia (Rare)");
             tritanopiaButton = new JButton("Tritanopia (Very Rare)");
             grayscaleButton = new JButton("Grayscale");
+
             aboutButton = new JButton("About Us");
 
             bottomLeftPanel.add(deuteranopiaButton);
@@ -299,14 +300,23 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
                 }
             });
 
+            tritanopiaButton.addActionListener(this);
+            grayscaleButton.addActionListener(this);
+
 
 
         }
 
         @Override
         public void actionPerformed(ActionEvent e) {
-
-
+            Object source = e.getSource();
+            if (tritanopiaButton.equals(source)) {
+                simulate(Simulation.tritan);
+            } else if (grayscaleButton.equals(source)) {
+                simulate(Simulation.grayscale);
+            } else {
+                throw new IllegalStateException("Unexpected value: " + e.getSource());
+            }
         }
 
     }
