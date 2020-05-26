@@ -257,6 +257,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
          JButton tritanopiaButton;
          JButton grayscaleButton;
          JButton aboutButton;
+         JLabel imageLabel;
          
         public UserInterface() throws Exception{
             JFrame mainFrame = new JFrame("Color Blindness Simulator");
@@ -288,13 +289,9 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             bottomLeftPanel.setSize(75, 15);
 
             setAction();
-
-            Image normal = loadImage(NORMALIMAGE);
-            normal.getScaledInstance(120, 120,  java.awt.Image.SCALE_SMOOTH);
-            ImageIcon normalImage = new ImageIcon(normal);
             JLabel imageLabel = new JLabel();
+            imageLabel.setPreferredSize(new Dimension(20, 20));
             bottomRightPanel.add(imageLabel);
-            imageLabel.setIcon(normalImage);
 
 
         }
@@ -322,6 +319,11 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             } else if (e.getSource() == aboutButton){
                 aboutMenuItemActionPerformed(e);
             }
+        }
+
+        public void setDemoImage(String name){
+            ImageIcon normal = loadImageIcon(NORMALIMAGE, "");
+            imageLabel.setIcon(normal);
         }
     }
 
