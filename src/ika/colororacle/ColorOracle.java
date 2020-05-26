@@ -302,7 +302,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             //add the apply button
             applyButton = new JButton("Apply");
             bottomRightPanel.add(applyButton);
-            bottomRightPanel.setLayout(new GridLayout(1, 1, 0, 0));
+            bottomRightPanel.setLayout(new GridLayout(2, 1, 0, 0));
 
 
 
