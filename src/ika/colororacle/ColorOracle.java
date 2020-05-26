@@ -281,6 +281,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             mainFrame.add(rightPanel, BorderLayout.EAST);
             mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   // End program when the main frame is closed
 
+            imageRightPanel.setSize();
 
             initailzeAllButton();
             initializeLeftPanel();
@@ -329,9 +330,9 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
         public void prepareDemoImagePanel(){
             imageLabel = new JLabel();
             imageLabel.setLayout(null);
-            imageLabel.setBounds(0, 0, 500, 380);
+            imageLabel.setBounds(0, 0, 550, 370);
             imageRightPanel.add(imageLabel, BorderLayout.CENTER);
-            imageRightPanel.setSize(585, 305);
+            imageRightPanel.setSize(imageLabel.getWidth()+ 5, imageLabel.getHeight()+5);
             setDemoImage(NORMALIMAGE);
         }
 
