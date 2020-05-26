@@ -44,7 +44,10 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
      */
     private static final String MENUICON = "menuIcon.gif";
     private static final String NORMALIMAGE = "hdr_normal.jpg";
-
+    private static final String GRAYIMAGE = "hdr_gray.jpg" ;
+    private static final String DEUTANIMAGE = "hdr_deut.jpg";
+    private static final String PROTANIMAGE = "hdr_prot.jpg";
+    private static final String TRITANIMAGE = "hdr_trit.jpg";
     /**
      * The information panels for the different types of simulation.
      */
@@ -311,13 +314,17 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == tritanopiaButton) {
-                simulate(Simulation.tritan);
+//                simulate(Simulation.tritan);
+                setDemoImage(TRITANIMAGE);
             } else if (e.getSource() == grayscaleButton) {
-                simulate(Simulation.grayscale);
+//                simulate(Simulation.grayscale);
+                setDemoImage(GRAYIMAGE);
             } else if (e.getSource() == deuteranopiaButton) {
-                simulate(Simulation.deutan);
+//                simulate(Simulation.deutan);
+                setDemoImage(DEUTANIMAGE);
             } else if (e.getSource() == protanopiaButton){
-                simulate(Simulation.protan);
+                setDemoImage(PROTANIMAGE);
+//                simulate(Simulation.protan);
             } else if (e.getSource() == aboutButton){
                 aboutMenuItemActionPerformed(e);
             }
