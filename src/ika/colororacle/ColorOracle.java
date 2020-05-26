@@ -289,11 +289,13 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
 
             setAction();
 
-            // get the image for the TrayIcon
-            ImageIcon normal = loadImageIcon(NORMALIMAGE, "");
+            Image normal = loadImage(NORMALIMAGE);
+            normal.getScaledInstance(120, 120,  java.awt.Image.SCALE_SMOOTH);
+            ImageIcon normalImage = new ImageIcon(normal);
             JLabel imageLabel = new JLabel();
             bottomRightPanel.add(imageLabel);
-            imageLabel.setIcon(normal);
+            imageLabel.setIcon(normalImage);
+
 
         }
 
