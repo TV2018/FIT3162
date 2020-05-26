@@ -285,8 +285,6 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             initializeLeftPanel();
             setAction();
             initializeRightPanel();
-            prepareDemoImagePanel();
-
 
         }
 
@@ -322,7 +320,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
         public void prepareDemoImagePanel(){
             imageLabel = new JLabel();
             imageLabel.setLayout(null);
-            imageLabel.setBounds(0, 0, 550, 370);
+            imageLabel.setBounds(0, 0, 480, 355);
             imageRightPanel.add(imageLabel, BorderLayout.CENTER);
             imageRightPanel.setSize(imageLabel.getWidth()+ 5, imageLabel.getHeight()+5);
             setDemoImage(NORMALIMAGE);
