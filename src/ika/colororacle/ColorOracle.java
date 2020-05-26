@@ -282,8 +282,8 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
 
             bottomLeftPanel.setLayout(new GridLayout(6, 1, 0, 5));
             bottomLeftPanel.setSize(75, 15);
-            // Hi from Austin
-            //add listener to button
+
+            // Add listener to deuteranopia
             deuteranopiaButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -291,7 +291,18 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
                     simulate(ColorOracle.Simulation.deutan);
                 }
             });
+
+            // Add listener to protanopia
+            protanopiaButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    // Perform action
+                    simulate(Simulation.protan);
+                }
+            });
+
             //hi
+
 //            return mainFrame;
 
         }
