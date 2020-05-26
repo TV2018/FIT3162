@@ -297,6 +297,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             deuteranopiaButton.addActionListener(this);
             protanopiaButton.addActionListener(this);
             aboutButton.addActionListener(this);
+            // Test
         }
 
         @Override
