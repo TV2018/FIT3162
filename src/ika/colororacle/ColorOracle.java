@@ -246,7 +246,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
 
     public class UserInterface extends JFrame {
         public UserInterface() {
-            JFrame mainFrame = new JFrame();
+            JFrame mainFrame = new JFrame("Color Blindness Simulator");
             mainFrame.setLocation(500, 500);
             mainFrame.setVisible(true);
             mainFrame.setSize(800, 400);
