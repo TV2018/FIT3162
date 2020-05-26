@@ -290,7 +290,8 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
 
             setAction();
             imageLabel = new JLabel();
-            imageLabel.setBounds(bottomRightPanel.getX(), bottomRightPanel.getY(), 120, 120);
+            imageLabel.setLayout(null);
+            imageLabel.setBounds(0, 0, 580, 300);
             bottomRightPanel.add(imageLabel, BorderLayout.CENTER);
             setDemoImage(NORMALIMAGE);
 
