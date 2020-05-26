@@ -244,6 +244,10 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
 
     }
 
+//    public class AboutUs extends JDialog {
+//
+//    }
+
     public class UserInterface extends JFrame implements ActionListener {
     	
     	 JButton normalButton ;
