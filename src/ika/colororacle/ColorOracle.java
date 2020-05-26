@@ -259,10 +259,11 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
          JButton aboutButton;
          JButton applyButton;
          JLabel imageLabel;
-        JPanel leftPanel;
-        JPanel rightPanel;
-        JPanel imageRightPanel;
-        JPanel buttonRightPanel;
+         JPanel leftPanel;
+         JPanel rightPanel;
+         JPanel imageRightPanel;
+         JPanel buttonRightPanel;
+         int selection;
 
         public UserInterface() throws Exception {
             //Initialize the main frame
@@ -281,14 +282,14 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             mainFrame.add(rightPanel, BorderLayout.EAST);
             mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   // End program when the main frame is closed
 
-            initailzeAllButton();
+            initializeAllButtons();
             initializeLeftPanel();
             setAction();
             initializeRightPanel();
 
         }
 
-        public void initailzeAllButton(){
+        public void initializeAllButtons(){
             deuteranopiaButton = new JButton("Deuteranopia (Common)");
             protanopiaButton = new JButton("Protanopia (Rare)");
             tritanopiaButton = new JButton("Tritanopia (Very Rare)");
@@ -310,6 +311,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
 
         public void initializeRightPanel(){
             //add the image and apply button to right pannel
+            applyButton.setLayout(null);
             rightPanel.add(imageRightPanel, BorderLayout.NORTH);
             rightPanel.add(buttonRightPanel, BorderLayout.SOUTH);
             prepareDemoImagePanel();
@@ -332,6 +334,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             deuteranopiaButton.addActionListener(this);
             protanopiaButton.addActionListener(this);
             aboutButton.addActionListener(this);
+            applyButton.addActionListener(this);
         }
 
         @Override
@@ -339,17 +342,37 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             if (e.getSource() == tritanopiaButton) {
 //                simulate(Simulation.tritan);
                 setDemoImage(TRITANIMAGE);
+                selection = 3;
             } else if (e.getSource() == grayscaleButton) {
 //                simulate(Simulation.grayscale);
                 setDemoImage(GRAYIMAGE);
+                selection = 4;
             } else if (e.getSource() == deuteranopiaButton) {
 //                simulate(Simulation.deutan);
                 setDemoImage(DEUTANIMAGE);
+                selection = 1;
             } else if (e.getSource() == protanopiaButton){
                 setDemoImage(PROTANIMAGE);
 //                simulate(Simulation.protan);
+                selection = 2;
             } else if (e.getSource() == aboutButton){
                 aboutMenuItemActionPerformed(e);
+            } else if (e.getSource() == applyButton){
+                switch (selection){
+                    case 1:
+                        simulate(Simulation.deutan);
+                        break;
+                    case 2:
+                        simulate(Simulation.protan);
+                        break;
+                    case 3:
+                        simulate(Simulation.tritan);
+                        break;
+                    case 4:
+                        simulate(Simulation.grayscale);
+                        break;
+                }
+                selection = 0;
             }
         }
 
