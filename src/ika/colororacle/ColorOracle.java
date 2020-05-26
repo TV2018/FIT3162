@@ -379,6 +379,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
                 selection = 0;
             }
             else if (e.getSource() == normalButton){
+                selection = 0;
                 setDemoImage(NORMALIMAGE);
             }
         }
