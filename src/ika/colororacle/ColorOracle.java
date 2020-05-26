@@ -260,6 +260,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
          JButton tritanopiaButton;
          JButton grayscaleButton;
          JButton aboutButton;
+         JButton applyButton;
          JLabel imageLabel;
          
         public UserInterface() throws Exception{
@@ -297,6 +298,12 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             imageLabel.setBounds(0, 0, 580, 300);
             bottomRightPanel.add(imageLabel, BorderLayout.CENTER);
             setDemoImage(NORMALIMAGE);
+
+            //add the apply button
+            applyButton = new JButton("Apply");
+            bottomRightPanel.add(applyButton);
+            bottomRightPanel.setLayout(new GridLayout(1, 1, 0, 0));
+
 
 
         }
