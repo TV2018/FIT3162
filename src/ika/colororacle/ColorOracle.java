@@ -302,6 +302,8 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             });
 
             //hi
+            //bye
+            //good
 
 //            return mainFrame;
 
