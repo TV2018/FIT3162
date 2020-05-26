@@ -291,7 +291,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
                     simulate(ColorOracle.Simulation.deutan);
                 }
             });
-
+            //hi
 //            return mainFrame;
 
         }
