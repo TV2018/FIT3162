@@ -304,7 +304,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             imageRightPanel.setSize(585, 305);
             setDemoImage(NORMALIMAGE);
 
-            //add the apply button
+            // Add the apply button
             applyButton = new JButton("Apply");
             applyButton.setLayout(null);
             applyButton.setLocation(0, 0);
