@@ -281,20 +281,12 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             mainFrame.add(rightPanel, BorderLayout.EAST);
             mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   // End program when the main frame is closed
 
-            imageRightPanel.setSize();
-
             initailzeAllButton();
             initializeLeftPanel();
             setAction();
             initializeRightPanel();
             prepareDemoImagePanel();
 
-
-
-
-
-//            applyButton.setLayout(null);
-//            applyButton.setLocation(0, 0);
 
         }
 
