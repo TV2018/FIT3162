@@ -253,7 +253,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
          JButton grayscaleButton;
          JButton aboutButton;
          
-        public JFrame UserInterface() {
+        public UserInterface() {
             JFrame mainFrame = new JFrame("Color Blindness Simulator");
             mainFrame.setLocation(500, 500);
             mainFrame.setVisible(true);
@@ -283,11 +283,20 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             bottomLeftPanel.setLayout(new GridLayout(6, 1, 0, 5));
             bottomLeftPanel.setSize(75, 15);
 
-            return mainFrame;
+            //add listener to button
+            deuteranopiaButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    //perform action
+                    simulate(ColorOracle.Simulation.deutan);
+                }
+            });
+
+//            return mainFrame;
 
         }
 
-//    public static void main(String[] args) {
+//    public void main(String[] args) {
 //        new UserInterface();
 //    }
     }
