@@ -289,7 +289,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             bottomLeftPanel.setSize(75, 15);
 
             setAction();
-            JLabel imageLabel = new JLabel();
+            imageLabel = new JLabel();
             imageLabel.setPreferredSize(new Dimension(20, 20));
             bottomRightPanel.add(imageLabel);
             setDemoImage(NORMALIMAGE);
@@ -323,7 +323,10 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
         }
 
         public void setDemoImage(String name){
-            ImageIcon normal = loadImageIcon(NORMALIMAGE, "");
+            Image imagedemo_original= loadImage(name);
+            Image dimg = imagedemo_original.getScaledInstance(imageLabel.getWidth(), imageLabel.getHeight(),
+                    Image.SCALE_SMOOTH);
+            ImageIcon normal = new ImageIcon(dimg);
             imageLabel.setIcon(normal);
         }
     }
