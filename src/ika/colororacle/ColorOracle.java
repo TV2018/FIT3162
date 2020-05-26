@@ -205,7 +205,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
         try {
             String folder = "/ika/icons/";
             java.net.URL imgURL = ColorOracle.class.getResource(folder + name);
-            if (imgURL != null) {
+            if (imgURL != null) {   
                 ImageIcon imageIcon = new ImageIcon(imgURL, description);
                 if (imageIcon.getIconWidth() == 0 || imageIcon.getIconHeight() == 0) {
                     imageIcon = null;
