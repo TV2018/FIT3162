@@ -283,6 +283,8 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             bottomLeftPanel.setLayout(new GridLayout(5, 1, 0, 5));
             bottomLeftPanel.setSize(75, 15);
 
+            setAction();
+
             // Add listener to deuteranopia
             deuteranopiaButton.addActionListener(new ActionListener() {
                 @Override
@@ -301,23 +303,30 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
                 }
             });
 
-            tritanopiaButton.addActionListener(this);
-            grayscaleButton.addActionListener(this);
+
 
 
 
         }
 
+
+        public void setAction(){
+            tritanopiaButton.addActionListener(this);
+            grayscaleButton.addActionListener(this);
+//            deuteranopiaButton.addActionListener(this);
+//            protanopiaButton.addActionListener(this);
+        }
+
         @Override
         public void actionPerformed(ActionEvent e) {
-            Object source = e.getSource();
-            if (tritanopiaButton.equals(source)) {
+            if (e.getSource() == tritanopiaButton) {
                 simulate(Simulation.tritan);
-            } else if (grayscaleButton.equals(source)) {
+            } else if (e.getSource() == grayscaleButton) {
                 simulate(Simulation.grayscale);
-            } else {
-                throw new IllegalStateException("Unexpected value: " + e.getSource());
             }
+//            } else if (e.getSource() == deuteranopiaButton) {
+//                simulate(Simulation.deutan);
+//            }
         }
 
     }
