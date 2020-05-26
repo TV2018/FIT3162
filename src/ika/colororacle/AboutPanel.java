@@ -48,7 +48,7 @@ public class AboutPanel extends javax.swing.JPanel {
         setLayout(new java.awt.GridBagLayout());
 
         textLabel.setFont(textLabel.getFont().deriveFont(textLabel.getFont().getSize()-2f));
-        textLabel.setText("<html><center>Version 1.3<br><br>Programming by<br>Bernhard Jenny, Monash University<br>and other contributors.<br><br>Ideas, Testing and Icon by<br>Nathaniel Vaughn Kelso<br><br>&copy; B. Jenny & N.V. Kelso 2006–2018.<br>CC-BY using the MIT License<br><br>For updates and further information see:<br></center></html>");
+        textLabel.setText("<html><center>Version 1.3.1<br><br>Programming by<br>Bernhard Jenny & Nathaniel Vaughn Kelso<br>Austin Teck, Fergus Makmur & Sokunthervy Vann - Monash University<br>and other contributors.<br><br>Monash University First Year Project (FIT3162)<br><br>&copy; B. Jenny, A. Teck, F. Makmur, S. Vann & N.V. Kelso 2006–2018.<br>CC-BY using the MIT License<br><br>For updates and further information see:<br></center></html>");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -73,7 +73,7 @@ public class AboutPanel extends javax.swing.JPanel {
         add(iconLabel, gridBagConstraints);
 
         titleLabel.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        titleLabel.setText("<html>Color Oracle</html>");
+        titleLabel.setText("<html>Color Blindness Simulator for Linux / Windows</html>");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
