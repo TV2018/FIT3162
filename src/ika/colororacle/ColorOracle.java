@@ -245,7 +245,15 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
     }
 
     public class UserInterface extends JFrame {
-        public UserInterface() {
+    	
+    	 JButton normalButton ;
+         JButton deuteranopiaButton;
+         JButton protanopiaButton ;
+         JButton tritanopiaButton;
+         JButton grayscaleButton;
+         JButton aboutButton;
+         
+        public JFrame UserInterface() {
             JFrame mainFrame = new JFrame("Color Blindness Simulator");
             mainFrame.setLocation(500, 500);
             mainFrame.setVisible(true);
@@ -257,12 +265,12 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             mainFrame.add(bottomRightPanel, BorderLayout.EAST);
 
 
-            JButton normalButton = new JButton("Normal Vision");
-            JButton deuteranopiaButton = new JButton("Deuteranopia (Common)");
-            JButton protanopiaButton = new JButton("Protanopia (Rare)");
-            JButton tritanopiaButton = new JButton("Tritanopia (Very Rare)");
-            JButton grayscaleButton = new JButton("Grayscale");
-            JButton aboutButton = new JButton("About Us");
+            normalButton = new JButton("Normal Vision");
+            deuteranopiaButton = new JButton("Deuteranopia (Common)");
+            protanopiaButton = new JButton("Protanopia (Rare)");
+            tritanopiaButton = new JButton("Tritanopia (Very Rare)");
+            grayscaleButton = new JButton("Grayscale");
+            aboutButton = new JButton("About Us");
 
             bottomLeftPanel.add(normalButton);
             bottomLeftPanel.add(deuteranopiaButton);
@@ -275,6 +283,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             bottomLeftPanel.setLayout(new GridLayout(6, 1, 0, 5));
             bottomLeftPanel.setSize(75, 15);
 
+            return mainFrame;
 
         }
 
