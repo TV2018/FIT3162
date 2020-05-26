@@ -259,59 +259,81 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
          JButton aboutButton;
          JButton applyButton;
          JLabel imageLabel;
-         
-        public UserInterface() throws Exception{
+        JPanel leftPanel;
+        JPanel rightPanel;
+        JPanel imageRightPanel;
+        JPanel buttonRightPanel;
+
+        public UserInterface() throws Exception {
+            //Initialize the main frame
             JFrame mainFrame = new JFrame("Color Blindness Simulator");
             mainFrame.setLocation(500, 500);
             mainFrame.setVisible(true);
             mainFrame.setSize(800, 400);
-            JPanel bottomLeftPanel = new JPanel();
-            JPanel bottomRightPanel = new JPanel();
-            JPanel imageRightPanel = new JPanel();
-            JPanel buttonRightPanel = new JPanel();
+
+            leftPanel = new JPanel();
+            rightPanel = new JPanel();
+            imageRightPanel = new JPanel();
+            buttonRightPanel = new JPanel();
+
             mainFrame.setResizable(false);
-            mainFrame.add(bottomLeftPanel, BorderLayout.WEST);
-            mainFrame.add(bottomRightPanel, BorderLayout.EAST);
+            mainFrame.add(leftPanel, BorderLayout.WEST);
+            mainFrame.add(rightPanel, BorderLayout.EAST);
             mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   // End program when the main frame is closed
 
-            
+
+            initailzeAllButton();
+            initializeLeftPanel();
+            setAction();
+            initializeRightPanel();
+            prepareDemoImagePanel();
+
+
+
+
+
+//            applyButton.setLayout(null);
+//            applyButton.setLocation(0, 0);
+
+        }
+
+        public void initailzeAllButton(){
             deuteranopiaButton = new JButton("Deuteranopia (Common)");
             protanopiaButton = new JButton("Protanopia (Rare)");
             tritanopiaButton = new JButton("Tritanopia (Very Rare)");
             grayscaleButton = new JButton("Grayscale");
-
             aboutButton = new JButton("About Us");
+            // applyButton in the right panel
+            applyButton = new JButton("Apply");
+        }
 
-            bottomLeftPanel.add(deuteranopiaButton);
-            bottomLeftPanel.add(protanopiaButton);
-            bottomLeftPanel.add(tritanopiaButton);
-            bottomLeftPanel.add(grayscaleButton);
-            bottomLeftPanel.add(aboutButton);
+        public void initializeLeftPanel(){
+            leftPanel.add(deuteranopiaButton);
+            leftPanel.add(protanopiaButton);
+            leftPanel.add(tritanopiaButton);
+            leftPanel.add(grayscaleButton);
+            leftPanel.add(aboutButton);
+            leftPanel.setLayout(new GridLayout(5, 1, 0, 5));
+            leftPanel.setSize(75, 15);
+        }
 
-            bottomLeftPanel.setLayout(new GridLayout(5, 1, 0, 5));
-            bottomLeftPanel.setSize(75, 15);
+        public void initializeRightPanel(){
+            //add the image and apply button to right pannel
+            rightPanel.add(imageRightPanel, BorderLayout.NORTH);
+            rightPanel.add(buttonRightPanel, BorderLayout.SOUTH);
+            prepareDemoImagePanel();
+            buttonRightPanel.add(applyButton, BorderLayout.CENTER);
 
-            bottomRightPanel.add(imageRightPanel);
+        }
 
-            setAction();
+        public void prepareDemoImagePanel(){
             imageLabel = new JLabel();
             imageLabel.setLayout(null);
             imageLabel.setBounds(0, 0, 500, 380);
             imageRightPanel.add(imageLabel, BorderLayout.CENTER);
             imageRightPanel.setSize(585, 305);
             setDemoImage(NORMALIMAGE);
-
-            // Add the apply button
-            applyButton = new JButton("Apply");
-            applyButton.setLayout(null);
-            applyButton.setLocation(0, 0);
-            bottomRightPanel.add(applyButton, BorderLayout.CENTER);
-
-
-
-
         }
-
 
         public void setAction(){
             tritanopiaButton.addActionListener(this);
@@ -319,7 +341,6 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             deuteranopiaButton.addActionListener(this);
             protanopiaButton.addActionListener(this);
             aboutButton.addActionListener(this);
-            // Test
         }
 
         @Override
