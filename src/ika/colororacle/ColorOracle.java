@@ -265,14 +265,12 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             mainFrame.add(bottomRightPanel, BorderLayout.EAST);
 
 
-            normalButton = new JButton("Normal Vision");
             deuteranopiaButton = new JButton("Deuteranopia (Common)");
             protanopiaButton = new JButton("Protanopia (Rare)");
             tritanopiaButton = new JButton("Tritanopia (Very Rare)");
             grayscaleButton = new JButton("Grayscale");
             aboutButton = new JButton("About Us");
 
-            bottomLeftPanel.add(normalButton);
             bottomLeftPanel.add(deuteranopiaButton);
             bottomLeftPanel.add(protanopiaButton);
             bottomLeftPanel.add(tritanopiaButton);
@@ -280,7 +278,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             bottomLeftPanel.add(aboutButton);
 
 
-            bottomLeftPanel.setLayout(new GridLayout(6, 1, 0, 5));
+            bottomLeftPanel.setLayout(new GridLayout(5, 1, 0, 5));
             bottomLeftPanel.setSize(75, 15);
 
             // Add listener to deuteranopia
