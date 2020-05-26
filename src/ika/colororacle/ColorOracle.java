@@ -252,6 +252,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
 
     public class UserInterface extends JFrame implements ActionListener {
 
+         JButton normalButton;
          JButton deuteranopiaButton;
          JButton protanopiaButton ;
          JButton tritanopiaButton;
@@ -290,6 +291,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
         }
 
         public void initializeAllButtons(){
+            normalButton = new JButton("Normal Vision");
             deuteranopiaButton = new JButton("Deuteranopia (Common)");
             protanopiaButton = new JButton("Protanopia (Rare)");
             tritanopiaButton = new JButton("Tritanopia (Very Rare)");
@@ -300,12 +302,13 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
         }
 
         public void initializeLeftPanel(){
+            leftPanel.add(normalButton);
             leftPanel.add(deuteranopiaButton);
             leftPanel.add(protanopiaButton);
             leftPanel.add(tritanopiaButton);
             leftPanel.add(grayscaleButton);
             leftPanel.add(aboutButton);
-            leftPanel.setLayout(new GridLayout(5, 1, 0, 5));
+            leftPanel.setLayout(new GridLayout(6, 1, 0, 5));
             leftPanel.setSize(75, 15);
         }
 
@@ -329,6 +332,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
         }
 
         public void setAction(){
+            normalButton.addActionListener(this);
             tritanopiaButton.addActionListener(this);
             grayscaleButton.addActionListener(this);
             deuteranopiaButton.addActionListener(this);
@@ -373,6 +377,9 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
                         break;
                 }
                 selection = 0;
+            }
+            else if (e.getSource() == normalButton){
+                setDemoImage(NORMALIMAGE);
             }
         }
 
