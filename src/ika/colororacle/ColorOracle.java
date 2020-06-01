@@ -414,7 +414,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
                         break;
                 }
                 final long end = System.currentTimeMillis();
-                System.out.println("Time taken to apply " + tempString + " filter " + (end - start));
+                System.out.println("Time taken to apply " + tempString + " filter: " + (end - start) + " milliseconds.");
                 selection = 0;
             }
             else if (e.getSource() == normalButton){
@@ -435,7 +435,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             ImageIcon normal = new ImageIcon(dimg);
             imageLabel.setIcon(normal);
             final long end = System.currentTimeMillis();
-            System.out.println("Time taken for preview image to change to " + name + ": " + (end - start) + " milliseconds.");
+            //System.out.println("Time taken for preview image to change to " + name + ": " + (end - start) + " milliseconds.");
         }
     }
 
