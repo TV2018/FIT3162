@@ -249,7 +249,10 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
 
     }
 
-
+    /**
+     * Newly implemented user interface class (does not require system tray unlike original Color Oracle code)
+     * Uses JFrame library
+     */
     public class UserInterface extends JFrame implements ActionListener {
 
          JButton normalButton;
@@ -266,6 +269,10 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
          JPanel buttonRightPanel;
          int selection;
 
+        /**
+         * User interface constructor
+         * @throws Exception
+         */
         public UserInterface() throws Exception {
             //Initialize the main frame
             JFrame mainFrame = new JFrame("Color Blindness Simulator");
@@ -283,13 +290,16 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             mainFrame.add(rightPanel, BorderLayout.EAST);
             mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   // End program when the main frame is closed
 
-            initializeAllButtons();
-            initializeLeftPanel();
-            setAction();
-            initializeRightPanel();
+            initializeAllButtons(); // Initialize all buttons
+            initializeLeftPanel();  // Color blind options on the left panel
+            setAction();            // Set listeners for each button
+            initializeRightPanel(); // Display preview image / apply button on the right panel
 
         }
 
+        /**
+         * Initialize all required buttons in the user interface
+         */
         public void initializeAllButtons(){
             normalButton = new JButton("Normal Vision");
             deuteranopiaButton = new JButton("Deuteranopia (Common)");
@@ -301,6 +311,9 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             applyButton = new JButton("Apply");
         }
 
+        /**
+         * Left panel encapsulates color blind options (and about section)
+         */
         public void initializeLeftPanel(){
             leftPanel.add(normalButton);
             leftPanel.add(deuteranopiaButton);
@@ -312,6 +325,9 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             leftPanel.setSize(75, 15);
         }
 
+        /**
+         * Right panel encapsulates preview image, as well as Apply button
+         */
         public void initializeRightPanel(){
             //add the image and apply button to right pannel
             applyButton.setLayout(null);
@@ -322,6 +338,9 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
 
         }
 
+        /**
+         * Use JLabel to display preview images for when a color blind option is selected
+         */
         public void prepareDemoImagePanel(){
             imageLabel = new JLabel();
             imageLabel.setLayout(null);
@@ -331,6 +350,9 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             setDemoImage(NORMALIMAGE);
         }
 
+        /**
+         * Add listeners to all buttons in order to trigger events
+         */
         public void setAction(){
             normalButton.addActionListener(this);
             tritanopiaButton.addActionListener(this);
@@ -341,6 +363,10 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             applyButton.addActionListener(this);
         }
 
+        /**
+         * Simulate a color deficiency for when a button is pressed
+         * @param e Represents current button
+         */
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == tritanopiaButton) {
@@ -384,6 +410,10 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             }
         }
 
+        /**
+         * Displays preview image on the right panel
+         * @param name Image filename
+         */
         public void setDemoImage(String name){
             Image imagedemo_original= loadImage(name);
             Image dimg = imagedemo_original.getScaledInstance(imageLabel.getWidth(), imageLabel.getHeight(),
