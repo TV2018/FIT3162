@@ -17,6 +17,8 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
+import static java.lang.System.currentTimeMillis;
+
 /**
  * ColorOracle is the main class of the program. It creates the tray icon and
  * handles all events, except for mouse events, which are handled by
@@ -194,7 +196,10 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
      * Constructor of Color Oracle. Initializes the tray icon and its menu.
      */
     private ColorOracle() throws Exception {
+        final long start = System.currentTimeMillis();
         new UserInterface();
+        final long end = System.currentTimeMillis();
+        System.out.println("Total time taken for UI: " + (end - start));
     }
 
     /**
@@ -613,7 +618,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
                 return;
             }
 
-            long currentTime = System.currentTimeMillis();
+            long currentTime = currentTimeMillis();
             if (currentTime > timeOfLastFocusLost) {
                 timeOfLastFocusLost = currentTime;
             }
@@ -642,7 +647,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
                 return;
             }
 
-            long currentTime = System.currentTimeMillis();
+            long currentTime = currentTimeMillis();
             if (currentTime > timeOfLastFocusLost) {
                 timeOfLastFocusLost = currentTime;
             }
@@ -654,7 +659,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
 
     private void startDeactivatingTimer() {
         int numberOfMillisecondsInTheFuture = 300;
-        long execTime = System.currentTimeMillis() + numberOfMillisecondsInTheFuture;
+        long execTime = currentTimeMillis() + numberOfMillisecondsInTheFuture;
         Date timeToRun = new Date(execTime);
         java.util.Timer timer = new java.util.Timer();
 
