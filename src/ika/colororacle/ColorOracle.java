@@ -334,7 +334,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
          * Right panel encapsulates preview image, as well as Apply button
          */
         public void initializeRightPanel(){
-            //add the image and apply button to right pannel
+            //add the image and apply button to right panel
             applyButton.setLayout(null);
             rightPanel.add(imageRightPanel, BorderLayout.NORTH);
             rightPanel.add(buttonRightPanel, BorderLayout.SOUTH);
@@ -420,11 +420,14 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
          * @param name Image filename
          */
         public void setDemoImage(String name){
+            final long start = System.currentTimeMillis();
             Image imagedemo_original= loadImage(name);
             Image dimg = imagedemo_original.getScaledInstance(imageLabel.getWidth(), imageLabel.getHeight(),
                     Image.SCALE_SMOOTH);
             ImageIcon normal = new ImageIcon(dimg);
             imageLabel.setIcon(normal);
+            final long end = System.currentTimeMillis();
+            System.out.println("Time taken for preview image to change to " + name + ": " + (end - start) + " milliseconds.");
         }
     }
 
