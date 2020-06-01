@@ -374,6 +374,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
          */
         @Override
         public void actionPerformed(ActionEvent e) {
+            String tempString = "";
             if (e.getSource() == tritanopiaButton) {
 //                simulate(Simulation.tritan);
                 setDemoImage(TRITANIMAGE);
@@ -393,20 +394,27 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             } else if (e.getSource() == aboutButton){
                 aboutMenuItemActionPerformed(e);
             } else if (e.getSource() == applyButton){
+                final long start = System.currentTimeMillis();
                 switch (selection){
                     case 1:
                         simulate(Simulation.deutan);
+                        tempString = "deuteranopia";
                         break;
                     case 2:
                         simulate(Simulation.protan);
+                        tempString = "protanopia";
                         break;
                     case 3:
                         simulate(Simulation.tritan);
+                        tempString = "tritanopia";
                         break;
                     case 4:
                         simulate(Simulation.grayscale);
+                        tempString = "grayscale";
                         break;
                 }
+                final long end = System.currentTimeMillis();
+                System.out.println("Time taken to apply " + tempString + " filter " + (end - start));
                 selection = 0;
             }
             else if (e.getSource() == normalButton){
