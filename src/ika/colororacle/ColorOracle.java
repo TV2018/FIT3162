@@ -273,6 +273,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
          JPanel imageRightPanel;
          JPanel buttonRightPanel;
          int selection;
+         // Test comment
 
         /**
          * User interface constructor
@@ -282,8 +283,8 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             //Initialize the main frame
             JFrame mainFrame = new JFrame("Color Blindness Simulator");
             mainFrame.setLocation(500, 500);
-            mainFrame.setVisible(true);
             mainFrame.setSize(800, 400);
+            mainFrame.setVisible(true);
 
             leftPanel = new JPanel();
             rightPanel = new JPanel();
@@ -299,6 +300,8 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             initializeLeftPanel();  // Color blind options on the left panel
             setAction();            // Set listeners for each button
             initializeRightPanel(); // Display preview image / apply button on the right panel
+
+//            mainFrame.pack();
 
         }
 
