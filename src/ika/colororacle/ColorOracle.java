@@ -263,7 +263,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
          JPanel rightPanel;
          JPanel imageRightPanel;
          JPanel buttonRightPanel;
-         int selection;
+         int selection = 0;
 
         public UserInterface() throws Exception {
             //Initialize the main frame
@@ -358,7 +358,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             } else if (e.getSource() == aboutButton){
                 aboutMenuItemActionPerformed(e);
             } else if (e.getSource() == applyButton){
-                switch (selection){
+                switch (selection) {
                     case 1:
                         simulate(Simulation.deutan);
                         break;
@@ -372,7 +372,6 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
                         simulate(Simulation.grayscale);
                         break;
                 }
-                selection = 0;
             }
         }
 
