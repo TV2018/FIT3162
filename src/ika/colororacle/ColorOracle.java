@@ -367,7 +367,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
          */
         @Override
         public void actionPerformed(ActionEvent e) {
-            final long startMain = System.currentTimeMillis();
+//            final long startMain = System.currentTimeMillis();
             String tempString = "";
             if (e.getSource() == tritanopiaButton) {
                 setDemoImage(TRITANIMAGE);
@@ -384,6 +384,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             } else if (e.getSource() == aboutButton){
                 aboutMenuItemActionPerformed(e);
             } else if (e.getSource() == applyButton){
+
                 final long start = System.currentTimeMillis();
                 switch (selection){
                     case 1:
@@ -403,16 +404,16 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
                         tempString = "grayscale";
                         break;
                 }
-//                final long end = System.currentTimeMillis();
-//                System.out.println("Time taken to apply " + tempString + " filter: " + (end - start) + " milliseconds.");
-                //selection = 0;
+                final long end = System.currentTimeMillis();
+                System.out.println("Time taken to apply " + tempString + " filter: " + (end - start) + " milliseconds.");
+
             }
             else if (e.getSource() == normalButton){
                 selection = 0;
                 setDemoImage(NORMALIMAGE);
             }
-            final long end = System.currentTimeMillis();
-            System.out.println("Total time taken for button click: " + (end - startMain));
+//            final long end = System.currentTimeMillis();
+//            System.out.println("Total time taken for button click: " + (end - startMain));
         }
 
         /**
