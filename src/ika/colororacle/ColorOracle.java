@@ -273,6 +273,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
          JPanel imageRightPanel;
          JPanel buttonRightPanel;
          int selection;
+         // Test comment
 
         /**
          * User interface constructor
