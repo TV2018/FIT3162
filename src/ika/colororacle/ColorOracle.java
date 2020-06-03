@@ -249,20 +249,30 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
      */
     public class UserInterface extends JFrame implements ActionListener {
 
-         JButton normalButton;
-         JButton deuteranopiaButton;
-         JButton protanopiaButton ;
-         JButton tritanopiaButton;
-         JButton grayscaleButton;
-         JButton aboutButton;
-         JButton applyButton;
-         JLabel imageLabel;
-         JPanel leftPanel;
-         JPanel rightPanel;
-         JPanel imageRightPanel;
-         JPanel buttonRightPanel;
-         int selection = 0;
-         // Test comment
+        // Color blind options
+        JButton normalButton;
+        JButton deuteranopiaButton;
+        JButton protanopiaButton ;
+        JButton tritanopiaButton;
+        JButton grayscaleButton;
+
+        // About us button
+        JButton aboutButton;
+
+        // Apply button
+        JButton applyButton;
+
+        // Image label for the preview
+        JLabel imageLabel;
+
+        // Separate the mainframe into 2 panels, one for buttons, one for preview
+        JPanel leftPanel;
+        JPanel rightPanel;
+        JPanel imageRightPanel;
+        JPanel buttonRightPanel;
+
+        // Current user's selection for a color blind option
+        int selection = 0;
 
         /**
          * User interface constructor
@@ -272,9 +282,9 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             //Initialize the main frame
             JFrame mainFrame = new JFrame("Color Blindness Simulator");
             mainFrame.setSize(800, 400);
+            mainFrame.setVisible(true);
             mainFrame.setLocation(500, 500);
 
-            mainFrame.setVisible(true);
 
             leftPanel = new JPanel();
             rightPanel = new JPanel();
@@ -290,9 +300,6 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             initializeLeftPanel();  // Color blind options on the left panel
             setAction();            // Set listeners for each button
             initializeRightPanel(); // Display preview image / apply button on the right panel
-
-//            mainFrame.pack();
-
         }
 
         /**
