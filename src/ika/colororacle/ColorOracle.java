@@ -113,7 +113,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
      */
     public static void main(String[] args) throws IOException {
 
-        final long startMain = System.currentTimeMillis();
+
 
         // don't run in headless mode
         if (GraphicsEnvironment.isHeadless()) {
@@ -156,8 +156,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             public void run() {
                 try {
                     new ColorOracle();
-                    final long end = System.currentTimeMillis();
-                    System.out.println("Total time taken for UI display: " + (end - startMain));
+
                 } catch (Exception ex) {
                     Logger.getLogger(ColorOracle.class.getName()).log(Level.SEVERE, null, ex);
                     System.exit(-1);
@@ -371,6 +370,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
          */
         @Override
         public void actionPerformed(ActionEvent e) {
+            final long startMain = System.currentTimeMillis();
             String tempString = "";
             if (e.getSource() == tritanopiaButton) {
                 setDemoImage(TRITANIMAGE);
@@ -414,6 +414,8 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
                 selection = 0;
                 setDemoImage(NORMALIMAGE);
             }
+            final long end = System.currentTimeMillis();
+            System.out.println("Total time taken for button click: " + (end - startMain));
         }
 
         /**
