@@ -156,6 +156,8 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             public void run() {
                 try {
                     new ColorOracle();
+                    final long end = System.currentTimeMillis();
+                    System.out.println("Total time taken for UI display: " + (end - startMain));
                 } catch (Exception ex) {
                     Logger.getLogger(ColorOracle.class.getName()).log(Level.SEVERE, null, ex);
                     System.exit(-1);
@@ -163,8 +165,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             }
         });
 
-        final long end = System.currentTimeMillis();
-        System.out.println("Total time taken for UI display: " + (end - startMain));
+
     }
 
     /**
