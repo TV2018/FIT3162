@@ -376,20 +376,16 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
         public void actionPerformed(ActionEvent e) {
             String tempString = "";
             if (e.getSource() == tritanopiaButton) {
-//                simulate(Simulation.tritan);
                 setDemoImage(TRITANIMAGE);
                 selection = 3;
             } else if (e.getSource() == grayscaleButton) {
-//                simulate(Simulation.grayscale);
                 setDemoImage(GRAYIMAGE);
                 selection = 4;
             } else if (e.getSource() == deuteranopiaButton) {
-//                simulate(Simulation.deutan);
                 setDemoImage(DEUTANIMAGE);
                 selection = 1;
             } else if (e.getSource() == protanopiaButton){
                 setDemoImage(PROTANIMAGE);
-//                simulate(Simulation.protan);
                 selection = 2;
             } else if (e.getSource() == aboutButton){
                 aboutMenuItemActionPerformed(e);
