@@ -272,7 +272,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
          JPanel rightPanel;
          JPanel imageRightPanel;
          JPanel buttonRightPanel;
-         int selection;
+         int selection = 0;
          // Test comment
 
         /**
@@ -414,7 +414,7 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
                 }
                 final long end = System.currentTimeMillis();
                 System.out.println("Time taken to apply " + tempString + " filter: " + (end - start) + " milliseconds.");
-                selection = 0;
+                //selection = 0;
             }
             else if (e.getSource() == normalButton){
                 selection = 0;
