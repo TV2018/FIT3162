@@ -147,19 +147,6 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
             return;
         }
 
-        // test whether the system supports the SystemTray
-        try {
-            if (!SystemTray.isSupported()) {
-                throw new UnsupportedOperationException("SystemTray not supported");
-            }
-        } catch (Exception ex) {
-            ColorOracle.showErrorMessage("Access to the system tray or "
-                            + "notification area \nis not supported on your system.",
-                    true);
-            Logger.getLogger(ColorOracle.class.getName()).log(Level.SEVERE, null, ex);
-            System.exit(-1);
-            return;
-        }
 
         java.awt.EventQueue.invokeLater(new Runnable() {
 
