@@ -113,6 +113,8 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
      */
     public static void main(String[] args) throws IOException {
 
+        final long startMain = System.currentTimeMillis();
+
         // don't run in headless mode
         if (GraphicsEnvironment.isHeadless()) {
             System.err.println("Headless mode not supported by Color Oracle.");
@@ -160,6 +162,9 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
                 }
             }
         });
+
+        final long end = System.currentTimeMillis();
+        System.out.println("Total time taken for UI display: " + (end - startMain));
     }
 
     /**
@@ -183,10 +188,10 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
      * Constructor of Color Oracle. Initializes the tray icon and its menu.
      */
     private ColorOracle() throws Exception {
-        final long start = System.currentTimeMillis();
+        //final long start = System.currentTimeMillis();
         new UserInterface();
-        final long end = System.currentTimeMillis();
-        System.out.println("Total time taken for UI: " + (end - start));
+        //final long end = System.currentTimeMillis();
+        //System.out.println("Total time taken for UI: " + (end - start));
     }
 
     /**
