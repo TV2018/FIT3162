@@ -403,8 +403,8 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
                         tempString = "grayscale";
                         break;
                 }
-                final long end = System.currentTimeMillis();
-                System.out.println("Time taken to apply " + tempString + " filter: " + (end - start) + " milliseconds.");
+//                final long end = System.currentTimeMillis();
+//                System.out.println("Time taken to apply " + tempString + " filter: " + (end - start) + " milliseconds.");
                 //selection = 0;
             }
             else if (e.getSource() == normalButton){
