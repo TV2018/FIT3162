@@ -17,6 +17,7 @@ final class Screen {
 
     /**
      * An array with all attached screens.
+     * @author: Bernhard Jenny, Institute of Cartography, ETH Zurich. Austin Teck, Fergus Makmur, Sokunthervy Vann, Monash Australia.
      */
     private static final ArrayList<Screen> screens = new ArrayList<Screen>();
 

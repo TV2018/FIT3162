@@ -11,7 +11,7 @@ import java.awt.Image;
  * The main window is not a JFrame, but a JDialog, because dialogs are not shown
  * in the Windows taskbar.
  *
- * @author Bernhard Jenny, Institute of Cartography, ETH Zurich.
+ * @author Bernhard Jenny, Institute of Cartography, ETH Zurich. Austin Teck, Fergus Makmur, Sokunthervy Vann, Monash Australia.
  */
 public class MainWindow extends javax.swing.JDialog {
 

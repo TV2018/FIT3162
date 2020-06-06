@@ -14,7 +14,7 @@ import javax.swing.JButton;
 /**
  * About panel for Color Oracle.
  *
- * @author Bernhard Jenny, Institute of Cartography, ETH Zurich.
+ * @author Bernhard Jenny, Institute of Cartography, ETH Zurich. Austin Teck, Fergus Makmur, Sokunthervy Vann, Monash Australia.
  */
 public class AboutPanel extends javax.swing.JPanel {
 

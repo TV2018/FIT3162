@@ -24,7 +24,7 @@ import static java.lang.System.currentTimeMillis;
  * handles all events, except for mouse events, which are handled by
  * ImageDisplayWithPanel.
  *
- * @author Bernhard Jenny, Institute of Cartography, ETH Zurich.
+ * @author Bernhard Jenny, Institute of Cartography, ETH Zurich. Austin Teck, Fergus Makmur, Sokunthervy Vann, Monash Australia.
  */
 public class ColorOracle extends WindowAdapter implements KeyListener, FocusListener, MouseWheelListener {
 

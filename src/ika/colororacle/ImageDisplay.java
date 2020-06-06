@@ -16,7 +16,7 @@ import javax.swing.JComponent;
 /**
  * A Swing component that displays an image.
  *
- * @author Bernhard Jenny, Institute of Cartography, ETH Zurich.
+ * @author Bernhard Jenny, Institute of Cartography, ETH Zurich. Austin Teck, Fergus Makmur, Sokunthervy Vann, Monash Australia.
  */
 public class ImageDisplay extends JComponent {
 

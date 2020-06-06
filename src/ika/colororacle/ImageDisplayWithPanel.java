@@ -20,7 +20,7 @@ import java.awt.event.MouseMotionListener;
  * raster image ( = the panel) over the image drawn by ImageDisplay. The panel
  * can be interactively moved with the mouse.
  *
- * @author Bernhard Jenny, Institute of Cartography, ETH Zurich.
+ * @author Bernhard Jenny, Institute of Cartography, ETH Zurich. Austin Teck, Fergus Makmur, Sokunthervy Vann, Monash Australia.
  */
 public class ImageDisplayWithPanel extends ImageDisplay
         implements MouseListener, MouseMotionListener {

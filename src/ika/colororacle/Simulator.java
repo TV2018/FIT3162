@@ -20,7 +20,7 @@ import java.awt.image.*;
  * J.D., (1999). Digital video colourmaps for checking the legibility of
  * displays by dichromats. Color Research and Application 24, 243-252.
  *
- * @author Bernhard Jenny, Institute of Cartography, ETH Zurich.
+ * @author Bernhard Jenny, Institute of Cartography, ETH Zurich. Austin Teck, Fergus Makmur, Sokunthervy Vann, Monash Australia.
  */
 public class Simulator {
 
