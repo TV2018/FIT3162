@@ -369,29 +369,40 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
         }
 
         /**
-         * Simulate a color deficiency for when a button is pressed
+         * Preview the filter prior to applying - when user applies, then simulate a color deficiency
          * @param e Represents current button
          */
         @Override
         public void actionPerformed(ActionEvent e) {
-//            final long startMain = System.currentTimeMillis();
+            // String to store which filter is being applied
             String tempString = "";
+            // Tritanopia selected
             if (e.getSource() == tritanopiaButton) {
                 setDemoImage(TRITANIMAGE);
                 selection = 3;
-            } else if (e.getSource() == grayscaleButton) {
+            }
+            // Grayscale selected
+            else if (e.getSource() == grayscaleButton) {
                 setDemoImage(GRAYIMAGE);
                 selection = 4;
-            } else if (e.getSource() == deuteranopiaButton) {
+            }
+            // Deuteranopia selected
+            else if (e.getSource() == deuteranopiaButton) {
                 setDemoImage(DEUTANIMAGE);
                 selection = 1;
-            } else if (e.getSource() == protanopiaButton){
+            }
+            // Protanopia selected
+            else if (e.getSource() == protanopiaButton){
                 setDemoImage(PROTANIMAGE);
                 selection = 2;
-            } else if (e.getSource() == aboutButton){
+            }
+            // About section selected
+            else if (e.getSource() == aboutButton){
                 aboutMenuItemActionPerformed(e);
-            } else if (e.getSource() == applyButton){
-
+            }
+            // Apply filter to current screen and screenshot
+            else if (e.getSource() == applyButton){
+                // Measuring time taken to apply filters in milliseconds
                 final long start = System.currentTimeMillis();
                 switch (selection){
                     case 1:
@@ -415,12 +426,12 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
                 System.out.println("Time taken to apply " + tempString + " filter: " + (end - start) + " milliseconds.");
 
             }
+            // Normal selected
             else if (e.getSource() == normalButton){
                 selection = 0;
                 setDemoImage(NORMALIMAGE);
             }
-//            final long end = System.currentTimeMillis();
-//            System.out.println("Total time taken for button click: " + (end - startMain));
+
         }
 
         /**
@@ -428,11 +439,13 @@ public class ColorOracle extends WindowAdapter implements KeyListener, FocusList
          * @param name Image filename
          */
         public void setDemoImage(String name){
+            // Measuring time taken to preview image on UI
             final long start = System.currentTimeMillis();
             Image imagedemo_original= loadImage(name);
             Image dimg = imagedemo_original.getScaledInstance(imageLabel.getWidth(), imageLabel.getHeight(),
                     Image.SCALE_SMOOTH);
             ImageIcon normal = new ImageIcon(dimg);
+            // Set image to panel
             imageLabel.setIcon(normal);
             final long end = System.currentTimeMillis();
             System.out.println("Time taken for preview image to change to " + name + ": " + (end - start) + " milliseconds.");
